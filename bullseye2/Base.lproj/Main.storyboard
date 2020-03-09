@@ -82,6 +82,9 @@
                                 <rect key="frame" x="130" y="324" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="StartOverIcon" backgroundImage="SmallButton"/>
+                                <connections>
+                                    <action selector="startOver" destination="BYZ-38-t0r" eventType="touchUpInside" id="cfX-ew-wDb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AV-Fa-dTM">
                                 <rect key="frame" x="235" y="330" width="55" height="23"/>

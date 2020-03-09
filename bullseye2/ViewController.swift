@@ -49,7 +49,17 @@ class ViewController: UIViewController {
         
         slider.setMaximumTrackImage(trackRightResizable, for: .normal)
         
-        startNewRound()
+        startNewGame()
+    }
+    
+    @IBAction func startOver() {
+        startNewGame()
+    }
+    
+    func startNewGame() {
+      score = 0
+      round = 0
+      startNewRound()
     }
     
     func startNewRound(){
