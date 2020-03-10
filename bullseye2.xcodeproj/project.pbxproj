@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		252FCA5A241711FF00DB542C /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252FCA59241711FF00DB542C /* HighScoresTableViewController.swift */; };
 		257DC19D2407553600EF94C1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DC19C2407553600EF94C1 /* AboutViewController.swift */; };
 		257DC1A324075FAA00EF94C1 /* Bullseye.html in Resources */ = {isa = PBXBuildFile; fileRef = 257DC1A224075FAA00EF94C1 /* Bullseye.html */; };
 		257DC1A62407607300EF94C1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257DC1A52407607300EF94C1 /* WebKit.framework */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		252FCA59241711FF00DB542C /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		257DC19C2407553600EF94C1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		257DC1A224075FAA00EF94C1 /* Bullseye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Bullseye.html; path = ../../../../Downloads/Assets/Bullseye.html; sourceTree = "<group>"; };
 		257DC1A52407607300EF94C1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -75,6 +77,7 @@
 				25BE669F23F366BF0077E88C /* AppDelegate.swift */,
 				25BE66A123F366BF0077E88C /* SceneDelegate.swift */,
 				25BE66A323F366BF0077E88C /* ViewController.swift */,
+				252FCA59241711FF00DB542C /* HighScoresTableViewController.swift */,
 				25BE66A523F366BF0077E88C /* Main.storyboard */,
 				257DC19C2407553600EF94C1 /* AboutViewController.swift */,
 				257DC1A224075FAA00EF94C1 /* Bullseye.html */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				252FCA5A241711FF00DB542C /* HighScoresTableViewController.swift in Sources */,
 				25BE66A423F366BF0077E88C /* ViewController.swift in Sources */,
 				25BE66A023F366BF0077E88C /* AppDelegate.swift in Sources */,
 				257DC19D2407553600EF94C1 /* AboutViewController.swift in Sources */,

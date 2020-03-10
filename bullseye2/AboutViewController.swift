@@ -15,6 +15,8 @@ class AboutViewController: UIViewController {
         dismiss(animated:true, completion: nil)
     }
     
+    //uploaded package to embed web content into app
+    //addition features in UI library
      @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
