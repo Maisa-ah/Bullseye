@@ -9,9 +9,20 @@
 import UIKit
 
 class HighScoresTableViewController: UITableViewController {
+    /*
+    let row0item = HighScoreItem()
+    let row1item = HighScoreItem()
+    let row2item = HighScoreItem()
+    let row3item = HighScoreItem()
+    let row4item = HighScoreItem()*/
+    
+    //instead of instance variables, use a single array variable
+    var items = [HighScoreItem]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        resetHighScores()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,7 +43,10 @@ class HighScoresTableViewController: UITableViewController {
     //function specifies number of rows for each section (use if statements if sections have different amount of rows, then we can say if indexPath.section==x {return y} )
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        
+       // return 5
+        //return the size of array to determine how many rows
+        return items.count
     }
     
     //function labels sections of table with a string (use to title sections)
@@ -49,32 +63,18 @@ class HighScoresTableViewController: UITableViewController {
                     
                     let cell  = tableView.dequeueReusableCell(withIdentifier: "HighScoreItem", for: indexPath)//set prototype cell into a reusable cell, rows specify how many cells there will be, sections specify how many group of rows will appear
                     
+                    //ask array for the HighScoreItem object at the corresponding row
+                    let item = items[indexPath.row]
+                    
                     let nameLabel = cell.viewWithTag(1000) as! UILabel//label of each cell with tag 1000 will be namelabel
                     
                     let scoreLabel = cell.viewWithTag(2000) as! UILabel//label of each cell with tag 2000 will be scorelabel
                     
                     //for each row, replace those certain labels with names and their scores
-                    if indexPath.row == 0 {
-                      nameLabel.text = "The reader of this book"
-                      scoreLabel.text = "50000"
-                    }
-                    else if indexPath.row == 1 {
-                      nameLabel.text = "Manda"
-                      scoreLabel.text = "10000"
-                    }
-                    else if indexPath.row == 2 {
-                      nameLabel.text = "Joey"
-                      scoreLabel.text = "5000"
-                    }
-                    else if indexPath.row == 3 {
-                      nameLabel.text = "Adam"
-                      scoreLabel.text = "1000"
-                    }
-                    else if indexPath.row == 4 {
-                      nameLabel.text = "Eli"
-                      scoreLabel.text = "500"
-                    }
-                    
+
+                    nameLabel.text = item.name
+                    //set int to strings
+                    scoreLabel.text = String(item.score)
                     
                     
                     return cell
@@ -88,6 +88,48 @@ class HighScoresTableViewController: UITableViewController {
                didSelectRowAt indexPath: IndexPath) {
       tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
+    //enable swipe to delete
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+
+    }
+    
+    
+    @IBAction func resetHighScores() {
+        let item1=HighScoreItem()
+        item1.name="The reader of this book"
+        item1.score = 50000
+        items.append(item1)
+        
+        let item2=HighScoreItem()
+        item2.name="Manda"
+        item2.score = 10000
+        items.append(item2)
+        
+        let item3=HighScoreItem()
+        item3.name="Joey"
+        item3.score = 5000
+        items.append(item3)
+        
+        let item4=HighScoreItem()
+        item4.name="Adam"
+        item4.score = 1000
+        items.append(item4)
+        
+        let item5=HighScoreItem()
+        item5.name="Eli"
+        item5.score = 500
+        items.append(item5)
+        
+        table.reloadData()
+    }
+    
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

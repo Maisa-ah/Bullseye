@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9BB-gY-7qm">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Bullseye-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bullseye2" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,6 +143,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Bullseye" id="xLP-y6-ulZ"/>
                     <connections>
                         <outlet property="roundLabel" destination="Lwl-w1-ucj" id="KS6-bZ-rNh"/>
                         <outlet property="scoreLabel" destination="nWJ-9B-AT0" id="vpA-Jc-VOF"/>
@@ -152,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.61607142857142" y="114.49275362318842"/>
+            <point key="canvasLocation" x="881.91964285714278" y="114.49275362318842"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="VE6-6J-VUC">
@@ -202,9 +203,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1B-js-V02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ioU-Bk-bEe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="525" y="-268.1159420289855"/>
+            <point key="canvasLocation" x="1268.3035714285713" y="-268.1159420289855"/>
         </scene>
-        <!--High Scores Table View Controller-->
+        <!--High Scores-->
         <scene sceneID="zbt-2U-lwS">
             <objects>
                 <tableViewController id="mYq-AB-uvN" customClass="HighScoresTableViewController" customModule="bullseye2" customModuleProvider="target" sceneMemberID="viewController">
@@ -214,20 +215,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HighScoreItem" id="CCS-wA-mYd">
-                                <rect key="frame" x="0.0" y="28" width="896" height="44.5"/>
+                                <rect key="frame" x="0.0" y="28" width="896" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CCS-wA-mYd" id="0j5-NG-cUf">
-                                    <rect key="frame" x="44" y="0.0" width="808" height="44.5"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U19-5X-iHI">
-                                            <rect key="frame" x="20" y="11" width="388" height="22"/>
+                                            <rect key="frame" x="20" y="11" width="388" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-sd-J1C">
-                                            <rect key="frame" x="406" y="11" width="388" height="21.5"/>
+                                            <rect key="frame" x="406" y="11" width="388" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -260,11 +261,35 @@
                             <outlet property="delegate" destination="mYq-AB-uvN" id="PMB-q3-VF5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qrr-ia-b2f"/>
+                    <navigationItem key="navigationItem" title="High Scores" id="qrr-ia-b2f">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="MIG-t7-g8R">
+                            <connections>
+                                <action selector="resetHighScores:" destination="mYq-AB-uvN" id="KxG-uL-5TW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBP-ie-pXm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543.75" y="528.98550724637687"/>
+            <point key="canvasLocation" x="1287.0535714285713" y="528.98550724637687"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BFz-Vg-Zya">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9BB-gY-7qm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cVk-xR-4dq">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="G9I-dS-hHj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5PM-OP-Lps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.61607142857142" y="114.49275362318842"/>
         </scene>
     </scenes>
     <resources>
